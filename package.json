@@ -1,5 +1,5 @@
 {
-  "name": "cp_1_backend",
+  "name": "capstone-style_be",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,7 +7,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon -e js -r dotenv/config ./src/server.js",
-    "start": "node ./src/server/index.js"
+    "start": "node ./src/server.js"
   },
   "keywords": [],
   "author": "",

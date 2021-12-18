@@ -27,14 +27,14 @@ server.use(errorHandlers.server);
 
 mongoose.connect(process.env.MONGO_CONNECTION);
 
-/* mongoose.connection.on("connected", () => {
+mongoose.connection.on("connected", () => {
   console.log("Successfully connected to mongo!");
   server.listen(port, hostname, () => {
     console.table(listEndpoints(server));
-    console.log(`Server is running at http://${hostname}:${port}`);
+    console.log(`Server is running at http://${process.env.HOST}:${process.env.PORT}`);
   });
 });
 
 mongoose.connection.on("error", (err) => {
   console.log("MONGO ERROR: ", err);
-}); */
+});
