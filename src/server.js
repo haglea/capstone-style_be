@@ -10,8 +10,8 @@ const { errorHandlers, serverConfig } = lib;
 
 const server = express();
 
-/* const port = process.env.PORT || 3001;
-const hostname = process.env.HOST || "127.0.0.1"; */
+const port = process.env.PORT || 3001;
+const hostname = process.env.HOST || "127.0.0.1";
 
 server.use(cors(serverConfig));
 server.use(express.json());
@@ -31,7 +31,7 @@ mongoose.connection.on("connected", () => {
   console.log("Successfully connected to mongo!");
   server.listen(port, hostname, () => {
     console.table(listEndpoints(server));
-    console.log(`Server is running at http://${process.env.HOST}:${process.env.PORT}`);
+    console.log(`Server is running at http://${hostname}:${port}`);
   });
 });
 
