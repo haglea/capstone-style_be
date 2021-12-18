@@ -28,7 +28,7 @@ mongoose.connect(process.env.MONGO_CONNECTION);
 
 mongoose.connection.on("connected", () => {
   console.log("Successfully connected to mongo!");
-  server.listen(port, hostname, () => {
+  server.listen(port, () => {
     console.table(listEndpoints(server));
     console.log(`Server is running at ${port}`);
   });
