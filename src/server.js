@@ -24,6 +24,11 @@ server.use(errorHandlers.forbidden);
 server.use(errorHandlers.notFound);
 server.use(errorHandlers.server);
 
+server.use(express.static(path.join(__dirname, '../build')))
+server.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../build'))
+})
+
 mongoose.connect(process.env.MONGODB_URI);
 
 mongoose.connection.on("connected", () => {
