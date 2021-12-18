@@ -24,7 +24,7 @@ server.use(errorHandlers.forbidden);
 server.use(errorHandlers.notFound);
 server.use(errorHandlers.server);
 
-mongoose.connect(process.env.MONGO_URI);
+mongoose.connect(process.env.MONGODB_URI);
 
 mongoose.connection.on("connected", () => {
   console.log("Successfully connected to mongo!");
