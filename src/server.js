@@ -10,8 +10,8 @@ const { errorHandlers, serverConfig } = lib;
 
 const server = express();
 
-const port = process.env.PORT || 3001;
-const hostname = process.env.HOST || "127.0.0.1";
+/* const port = process.env.PORT || 3001;
+const hostname = process.env.HOST || "127.0.0.1"; */
 
 server.use(cors(serverConfig));
 server.use(express.json());
@@ -27,7 +27,7 @@ server.use(errorHandlers.server);
 
 mongoose.connect(process.env.MONGO_CONNECTION);
 
-mongoose.connection.on("connected", () => {
+/* mongoose.connection.on("connected", () => {
   console.log("Successfully connected to mongo!");
   server.listen(port, hostname, () => {
     console.table(listEndpoints(server));
@@ -37,4 +37,4 @@ mongoose.connection.on("connected", () => {
 
 mongoose.connection.on("error", (err) => {
   console.log("MONGO ERROR: ", err);
-});
+}); */
